@@ -22,7 +22,7 @@ GetSkysparkCookie <- function(username, password, server, project){
   length <- length(unlist(strsplit(postBody, "")))
   
   postReturn <- POST(paste0(server, "/auth/", project, "/api?", username), 
-                     add_headers("Content-Type" = "text/plain", "charest" = "utf-8", "Content-Length" = length), 
+                     add_headers("Content-Type" = "text/plain", "charset" = "utf-8", "Content-Length" = length), 
                      body = postBody, encode = "multipart")
   
   str_extract(content(postReturn), perl("(?<=cookie:)(.*)"))
