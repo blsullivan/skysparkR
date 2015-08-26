@@ -1,8 +1,8 @@
 library(httr)
 
 GetSkysparkFolio <- function(expr, cookie, server, project, datatype){
-  #expr is an Axon code chunk.  Any quotes used in expr must be properly escaped.
-  #e.g. expr <- "read(point and dis == \"Point Name\")" 
+  #expr is an Axon code chunk.  SkySpark REST requires escaping quotes, so expr must be properly escaped.
+  #e.g. expr <- "read(point and dis == \\\"Point Name\\\")" 
   #cookie needs to be generated from the function GetSkysparkCookie(username, password, server, project)
   #sever url should not contain / at the end
   #returns the results of the Folio/Axon code chunk in CSV format.  Return format can be changed to zinc, JSON, or xml by modifying headers

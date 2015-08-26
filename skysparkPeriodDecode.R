@@ -1,14 +1,14 @@
 
 ##function converts a character to its index position in base64
-fromBase64 <- function(character){
+FromBase64 <- function(character){
   base64 <- unlist(strsplit("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", ""))
   which(base64 ==  character) - 1
 }
 
 ## function takes a "periods" string from skyspark sparks() result and converts it to a data frame of all times
-## current returns in the form of a data frame with starting time in col1, duration in col2
-## all times are in minutes
-decodePeriod <- function(periodString){
+## returns in the form of a data frame with starting time in col1, duration in col2
+## all times are in minutes starting at midnight = 00:00
+DecodePeriod <- function(periodString){
   characters <- unlist(strsplit(periodString, ""))
   characters <- as.numeric(sapply(characters, fromBase64))
   
