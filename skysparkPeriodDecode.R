@@ -10,7 +10,7 @@ FromBase64 <- function(character){
 ## all times are in minutes starting at midnight = 00:00
 DecodePeriod <- function(periodString){
   characters <- unlist(strsplit(periodString, ""))
-  characters <- as.numeric(sapply(characters, fromBase64))
+  characters <- as.numeric(sapply(characters, FromBase64))
   
   results <- data.frame(startTime = integer(), duration = integer())
   i <- 1
